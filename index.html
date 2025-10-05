@@ -9,54 +9,90 @@
       background-color: #0f0f0f;
       color: #00ffcc;
       font-family: Arial, sans-serif;
-      text-align: center;
       padding: 50px;
+      display: flex;
     }
+
+    .main-content {
+      flex: 1;
+      text-align: center;
+    }
+
     h1 {
       font-size: 3em;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 1.2em;
     }
+
     .author {
       margin-top: 30px;
       font-style: italic;
       color: #999;
     }
-    .section {
-      border: 1px solid #00ffcc;
-      margin: 30px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 10px;
+
+    .sidebar {
+      width: 250px;
+      margin-left: 30px;
     }
-    .section h2 {
-      color: #00ffff;
-      margin-bottom: 10px;
+
+    .accordion {
+      background-color: #1a1a1a;
+      color: #00ffcc;
+      cursor: pointer;
+      padding: 15px;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 1.2em;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #333;
+    }
+
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background-color: #262626;
+      overflow: hidden;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .panel p {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <h1>TechTuner BD</h1>
-  <p>বাংলায় হার্ডওয়্যার ও সফটওয়্যার টিউনিংয়ের নতুন ঠিকানা</p>
-
-  <div class="section">
-    <h2>প্রসেসর</h2>
-    <p>প্রসেসরের ধরন, গতি, কোর সংখ্যা, এবং কনফিগারেশন টিপস এখানে থাকবে।</p>
+  <div class="main-content">
+    <h1>TechTuner BD</h1>
+    <p>বাংলায় হার্ডওয়্যার ও সফটওয়্যার টিউনিংয়ের নতুন ঠিকানা</p>
+    <div class="author">By Salman Khan Bahadur</div>
   </div>
 
-  <div class="section">
-    <h2>মাদারবোর্ড</h2>
-    <p>মাদারবোর্ডের চিপসেট, স্লট, এবং কম্প্যাটিবিলিটি নিয়ে বিস্তারিত আলোচনা।</p>
+  <div class="sidebar">
+    <button class="accordion">Computer Part</button>
+    <div class="panel">
+      <p>🔹 প্রসেসর: কোর, থ্রেড, ক্লক স্পিড</p>
+      <p>🔹 মাদারবোর্ড: চিপসেট, স্লট, ফর্ম ফ্যাক্টর</p>
+      <p>🔹 RAM: DDR টাইপ, স্পিড, ক্যাপাসিটি</p>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>RAM</h2>
-    <p>RAM এর ধরন, স্পিড, এবং কিভাবে সঠিক RAM নির্বাচন করবেন তা এখানে থাকবে।</p>
-  </div>
+  <script>
+    const acc = document.querySelector(".accordion");
+    const panel = document.querySelector(".panel");
 
-  <div class="author">By Salman Khan Bahadur</div>
+    acc.addEventListener("click", function () {
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  </script>
 </body>
 </html>
 
